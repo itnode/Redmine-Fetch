@@ -32,7 +32,7 @@ Returns a config hashref for the Redmine REST API.
 
 - returns: $c Hash - Config Hash for the Redmine REST API
 
-## redmine\_\_ua
+## redmine\_ua
 
 Redmine Useragent. Abstracts PUT und GET Requests for the Redmine Rest API. Will dump errors per Data::Printer
 

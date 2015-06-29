@@ -214,7 +214,7 @@ Returns a config hashref for the Redmine REST API.
 
 =back
 
-=head2 redmine__ua
+=head2 redmine_ua
 
 Redmine Useragent. Abstracts PUT und GET Requests for the Redmine Rest API. Will dump errors per Data::Printer
 
