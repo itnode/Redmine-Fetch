@@ -177,6 +177,9 @@ Redmine::Fetch - It's new $module
 
     use Redmine::Fetch;
 
+    my $rf = Redmine::Fetch->new( $server_uri, $api_key, $project_id, $filter);
+    my $ticket = $rf->get_ticket_by_id(555);
+
 =head1 DESCRIPTION
 
 This module provides API access to the Redmine REST API
