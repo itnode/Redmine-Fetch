@@ -64,6 +64,7 @@ create ticker in Redmine Tracker
 
 - param: $subject String - Subject of the Ticket
 - param: $description String - Description of the Ticket
+- param: $payload String - additional Ticket parameters as a hash (e.g. tracker\_id, priority, etc.)
 - returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
 
 ## get\_tickets

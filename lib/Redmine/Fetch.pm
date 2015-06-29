@@ -132,7 +132,7 @@ sub create_ticket {
 
     my ( $self, $subject, $description, $payload ) = @_;
 
-    my $default_payload = { subject => $subject, $description => $description };
+    my $default_payload = { subject => $subject, description => $description };
 
     $payload = { %$default_payload, %$payload };
 
@@ -284,6 +284,8 @@ create ticker in Redmine Tracker
 =item * param: $subject String - Subject of the Ticket
 
 =item * param: $description String - Description of the Ticket
+
+=item * param: $payload String - additional Ticket parameters as a hash (e.g. tracker_id, priority, etc.)
 
 =item * returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
 
