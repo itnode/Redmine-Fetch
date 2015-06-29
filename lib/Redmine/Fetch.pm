@@ -57,6 +57,14 @@ sub redmine_ua {
 
             $tx = $ua->delete( $config->{server} . '/' . $call . '.json' => $header );
 
+        } elsif ( $mode eq 'post' ) {
+
+            my $params = { project_id => $config->{project_id}, };
+
+            my $combined_payload = { %$payload, %$params };
+
+            $tx = $ua->post( $config->{server} . '/' . $call . '.json' => $header => form => $combined_payload );
+
         } else {
 
             my $params = { project_id => $config->{project_id}, };
@@ -235,7 +243,7 @@ Redmine Useragent. Abstracts PUT und GET Requests for the Redmine Rest API. Will
 
 =over
 
-=item * param: $mode String - 'get' || 'put'
+=item * param: $mode String - 'get' || 'put' || 'delete' || 'post'
 
 =item * param: $call String - calling API path
 

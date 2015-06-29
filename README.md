@@ -36,7 +36,7 @@ Returns a config hashref for the Redmine REST API.
 
 Redmine Useragent. Abstracts PUT und GET Requests for the Redmine Rest API. Will dump errors per Data::Printer
 
-- param: $mode String - 'get' || 'put'
+- param: $mode String - 'get' || 'put' || 'delete' || 'post'
 - param: $call String - calling API path
 - param: $payload Hash || JSON - payload for PUT or GET request
 - returns: $response Mojo::UserAgent Response - Antwort Objekt der Transaktion oder leerer String
