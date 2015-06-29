@@ -49,6 +49,8 @@ sub redmine_ua {
 
         my $tx = '';
 
+        my $params = { project_id => $config->{project_id}, };
+
         if ( $mode eq 'put' ) {
 
             $tx = $ua->put( $config->{server} . '/' . $call . '.json' => $header => json => $payload );
@@ -59,15 +61,9 @@ sub redmine_ua {
 
         } elsif ( $mode eq 'post' ) {
 
-            my $params = { project_id => $config->{project_id}, };
-
-            my $combined_payload = { %$payload, %$params };
-
             $tx = $ua->post( $config->{server} . '/' . $call . '.json' => $header => form => $combined_payload );
 
         } else {
-
-            my $params = { project_id => $config->{project_id}, };
 
             my $combined_payload = { %$payload, %$params };
 
@@ -140,9 +136,9 @@ sub create_ticket {
 
     my ( $self, $subject, $description, $payload ) = @_;
 
-    my $default_payload = { subject => $subject, description => $description };
+    my $default_payload = { subject => $subject, description => $description, project_id => $self->ua_config->{project_id} };
 
-    $payload = { %$default_payload, %$payload };
+    $payload = { issue => { %$default_payload, %$payload } };
 
     my $response = $self->redmine_ua( 'post', 'issues', $payload );
 
