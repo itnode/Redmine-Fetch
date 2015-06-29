@@ -130,9 +130,11 @@ sub get_tickets {
 
 sub create_ticket {
 
-    my ( $self, $subject, $description ) = @_;
+    my ( $self, $subject, $description, $payload ) = @_;
 
-    my $payload = { subject => $subject, $description => $description };
+    my $default_payload = { subject => $subject, $description => $description };
+
+    $payload = { %$default_payload, %$payload };
 
     my $response = $self->redmine_ua( 'put', 'issues', $payload );
 
