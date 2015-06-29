@@ -136,7 +136,7 @@ sub create_ticket {
 
     $payload = { %$default_payload, %$payload };
 
-    my $response = $self->redmine_ua( 'put', 'issues', $payload );
+    my $response = $self->redmine_ua( 'post', 'issues', $payload );
 
     return $response;
 
