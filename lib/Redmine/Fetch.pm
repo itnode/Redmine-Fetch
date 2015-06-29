@@ -128,6 +128,19 @@ sub get_tickets {
     return $tickets->{issues};
 }
 
+sub create_ticket {
+
+    my ( $self, $subject, $description ) = @_;
+
+    my $payload = { subject => $subject, $description => $description };
+
+    my $response = $self->redmine_ua( 'put', 'issues', $payload );
+
+    return $response;
+
+}
+
+
 sub get_ticket_by_id {
 
     my ( $self, $ticket_id, $build_link_callback ) = @_;
@@ -255,6 +268,20 @@ deletes Wiki Page
 =over
 
 =item * param: $path String - path to delete
+
+=item * returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
+
+=back
+
+=head2 create_ticket
+
+create ticker in Redmine Tracker
+
+=over
+
+=item * param: $subject String - Subject of the Ticket
+
+=item * param: $description String - Description of the Ticket
 
 =item * returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
 

@@ -58,6 +58,14 @@ deletes Wiki Page
 - param: $path String - path to delete
 - returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
 
+## create\_ticket
+
+create ticker in Redmine Tracker
+
+- param: $subject String - Subject of the Ticket
+- param: $description String - Description of the Ticket
+- returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
+
 ## get\_tickets
 
 get list of Tickets
