@@ -19,7 +19,7 @@ You can find the docs here: http://www.redmine.org/projects/redmine/wiki/Rest\_a
 
 ## new
 
-Creates a new Ob>ject. Handle over the Redmine Config
+Creates a new Object. Handle over the Redmine Config
 
 - param: $api\_key String - API Key for Redmine
 - param: $project\_id Integer - Redmine Project ID

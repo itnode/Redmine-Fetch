@@ -190,7 +190,7 @@ You can find the docs here: http://www.redmine.org/projects/redmine/wiki/Rest_ap
 
 =head2 new
 
-Creates a new Ob>ject. Handle over the Redmine Config
+Creates a new Object. Handle over the Redmine Config
 
 =over
 
