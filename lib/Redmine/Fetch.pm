@@ -61,7 +61,7 @@ sub redmine_ua {
 
         } elsif ( $mode eq 'post' ) {
 
-            $tx = $ua->post( $config->{server} . '/' . $call . '.json' => $header => form => $combined_payload );
+            $tx = $ua->post( $config->{server} . '/' . $call . '.json' => $header => form => $payload );
 
         } else {
 
