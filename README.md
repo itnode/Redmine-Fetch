@@ -81,5 +81,5 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-Jens Gassmann <jg@itnode.de>
-Patrick Simon <ps@itnode.de>
+- Jens Gassmann <jg@itnode.de>
+- Patrick Simon <ps@itnode.de>
