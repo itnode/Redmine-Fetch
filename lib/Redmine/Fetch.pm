@@ -146,6 +146,15 @@ sub create_ticket {
 
 }
 
+sub delete_ticket {
+
+    my ( $self, $ticket_id ) = @_;
+
+    my $response = $self->redmine_ua( 'delete', 'issues/' . $ticket_id );
+
+    return $response;
+}
+
 
 sub get_ticket_by_id {
 
@@ -281,7 +290,7 @@ deletes Wiki Page
 
 =head2 create_ticket
 
-create ticker in Redmine Tracker
+create ticket in Redmine Tracker
 
 =over
 
@@ -290,6 +299,18 @@ create ticker in Redmine Tracker
 =item * param: $description String - Description of the Ticket
 
 =item * param: $payload String - additional Ticket parameters as a hash (e.g. tracker_id, priority, etc.)
+
+=item * returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
+
+=back
+
+=head2 delete_ticket
+
+delete a ticket in the Redmine Tracker
+
+=over
+
+=item * param: $ticket_id Integer - Ticket ID of the Redmine Ticket
 
 =item * returns: $response Mojo::UserAgent Response - Server answer, for further processing or empty String
 
