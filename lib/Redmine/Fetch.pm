@@ -136,6 +136,8 @@ sub create_ticket {
 
     my ( $self, $subject, $description, $payload ) = @_;
 
+    $payload ||= {};
+
     my $default_payload = { subject => $subject, description => $description, project_id => $self->ua_config->{project_id} };
 
     $payload = { issue => { %$default_payload, %$payload } };
