@@ -201,7 +201,7 @@ __END__
 
 =head1 NAME
 
-Redmine::Fetch - It's new $module
+Redmine::Fetch - A module to code against the Redmine API
 
 =head1 SYNOPSIS
 
